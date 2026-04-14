@@ -12,7 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { UserPlus, Send, RotateCcw } from "lucide-react";
+import { UserPlus, Send, RotateCcw, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface LeadData {
   nome: string;
@@ -72,7 +73,8 @@ const estados = [
 
 export function LeadCaptureForm() {
   const [lead, setLead] = useState<LeadData>(initialLead);
-  const [leads, setLeads] = useState<LeadData[]>([]);
+  const [leadCount, setLeadCount] = useState(0);
+  const [saving, setSaving] = useState(false);
 
   const updateField = (field: keyof LeadData, value: string) => {
     setLead((prev) => ({ ...prev, [field]: value }));
@@ -87,17 +89,43 @@ export function LeadCaptureForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!lead.nome || !lead.empresa || !lead.telefone) {
       toast.error("Preencha os campos obrigatórios: Nome, Empresa e Telefone");
       return;
     }
-    setLeads((prev) => [...prev, lead]);
-    setLead(initialLead);
-    toast.success(`Lead "${lead.nome}" salvo com sucesso!`, {
-      description: `Total de leads: ${leads.length + 1}`,
-    });
+
+    setSaving(true);
+    try {
+      const { error } = await supabase.from("leads").insert({
+        nome: lead.nome,
+        empresa: lead.empresa,
+        cargo: lead.cargo || null,
+        email: lead.email || null,
+        telefone: lead.telefone,
+        cidade: lead.cidade || null,
+        estado: lead.estado || null,
+        segmento: lead.segmento || null,
+        interesse: lead.interesse.length > 0 ? lead.interesse : null,
+        quantidade: lead.quantidade || null,
+        prazo: lead.prazo || null,
+        observacoes: lead.observacoes || null,
+      });
+
+      if (error) throw error;
+
+      setLeadCount((prev) => prev + 1);
+      setLead(initialLead);
+      toast.success(`Lead "${lead.nome}" salvo com sucesso!`, {
+        description: `Total nesta sessão: ${leadCount + 1}`,
+      });
+    } catch (err) {
+      console.error(err);
+      toast.error("Erro ao salvar lead. Tente novamente.");
+    } finally {
+      setSaving(false);
+    }
   };
 
   const handleReset = () => {
@@ -120,7 +148,7 @@ export function LeadCaptureForm() {
       </header>
 
       {/* Counter */}
-      {leads.length > 0 && (
+      {leadCount > 0 && (
         <div className="mx-auto max-w-3xl px-4 pt-4">
           <div className="flex items-center justify-between rounded-lg bg-copper/10 px-4 py-2.5 text-sm">
             <span className="font-medium text-copper-dark">
@@ -128,7 +156,7 @@ export function LeadCaptureForm() {
               Leads captados nesta sessão
             </span>
             <span className="rounded-full bg-copper px-3 py-0.5 text-xs font-bold text-primary-foreground">
-              {leads.length}
+              {leadCount}
             </span>
           </div>
         </div>
@@ -280,11 +308,16 @@ export function LeadCaptureForm() {
           <div className="mt-8 flex gap-3">
             <Button
               type="submit"
+              disabled={saving}
               className="flex-1 bg-copper text-primary-foreground hover:bg-copper-dark"
               size="lg"
             >
-              <Send className="mr-2 h-4 w-4" />
-              Salvar Lead
+              {saving ? (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              ) : (
+                <Send className="mr-2 h-4 w-4" />
+              )}
+              {saving ? "Salvando..." : "Salvar Lead"}
             </Button>
             <Button
               type="button"
@@ -298,27 +331,6 @@ export function LeadCaptureForm() {
             </Button>
           </div>
         </div>
-
-        {/* Saved leads summary */}
-        {leads.length > 0 && (
-          <div className="mt-6 rounded-xl border border-border bg-card p-6 shadow-sm">
-            <h3 className="mb-4 font-display text-lg font-semibold text-foreground">
-              Leads Captados ({leads.length})
-            </h3>
-            <div className="divide-y divide-border">
-              {leads.map((l, i) => (
-                <div key={i} className="flex items-center justify-between py-3 text-sm">
-                  <div>
-                    <span className="font-medium text-foreground">{l.nome}</span>
-                    <span className="mx-2 text-muted-foreground">—</span>
-                    <span className="text-muted-foreground">{l.empresa}</span>
-                  </div>
-                  <span className="text-xs text-muted-foreground">{l.telefone}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </form>
 
       {/* Footer */}
