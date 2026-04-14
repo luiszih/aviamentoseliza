@@ -112,9 +112,6 @@ export function LeadCaptureForm() {
           <div className="mb-2 font-display text-sm font-medium tracking-[0.3em] uppercase text-copper">
             Eliza Acessórios & Design
           </div>
-          <h1 className="font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-            Ficha de Captação de Leads
-          </h1>
           <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-1.5 text-sm font-medium text-copper-dark">
             <span className="inline-block h-2 w-2 rounded-full bg-copper animate-pulse" />
             Brasil Promotion Day
