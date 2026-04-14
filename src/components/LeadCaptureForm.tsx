@@ -51,7 +51,6 @@ const interesses = [
   "Chaveiros",
   "Bijuterias",
   "Coleções Exclusivas",
-  "Embalagens Personalizadas",
   "Outros",
 ];
 
