@@ -63,8 +63,8 @@
 
 :root {
   --radius: 0.5rem;
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body: 'Sora', system-ui, sans-serif;
 
   --background: oklch(0.98 0.005 60);
   --foreground: oklch(0.25 0.02 50);
@@ -91,6 +91,14 @@
   --copper-dark: oklch(0.42 0.1 40);
   --warm-bg: oklch(0.97 0.008 65);
   --warm-surface: oklch(0.99 0.003 60);
+
+  /* Eliza brand palette */
+  --eliza-bege: #FFD7AC;
+  --eliza-caramelo: #C8946F;
+  --eliza-marrom: #8E5C37;
+  --eliza-marrom-dark: #5a3820;
+  --eliza-offwhite: #FAF6F1;
+  --eliza-black: #0E0B08;
 
   --chart-1: oklch(0.55 0.1 45);
   --chart-2: oklch(0.65 0.08 50);
