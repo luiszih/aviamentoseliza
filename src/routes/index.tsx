@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { LeadCaptureForm } from "@/components/LeadCaptureForm";
+import { LandingPage } from "@/components/LandingPage";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Ficha de Captação - Eliza Design | Brasil Promotion Day" },
-      { name: "description", content: "Formulário de captação de leads para o evento Brasil Promotion Day - Eliza Acessórios & Design" },
+      { title: "Eliza Acessórios & Design — Fábrica premium há 30 anos" },
+      { name: "description", content: "Aviamentos, brindes corporativos e bijuterias com acabamento de joalheria. Certificação FAMA e ABVTEX Ouro. Solicite seu orçamento." },
     ],
   }),
 });
 
 function Index() {
-  return <LeadCaptureForm />;
+  return <LandingPage />;
 }
