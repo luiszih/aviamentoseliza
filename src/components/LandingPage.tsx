@@ -8,7 +8,7 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
-const WHATSAPP_NUMBER = "5519994229845";
+const WHATSAPP_NUMBER = "5519995411832";
 const WHATSAPP_MSG = "Olá! Tenho interesse em aviamentos personalizados para minha coleção. Gostaria de mais informações.";
 const WHATSAPP_FORM_MSG = "Olá! Acabei de preencher o formulário no site e gostaria de saber mais sobre aviamentos personalizados.";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
@@ -923,7 +923,7 @@ function Footer() {
           </div>
           <div className="space-y-2">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="flex items-center gap-2 hover:text-white">
-              <MessageCircle className="h-4 w-4" style={{ color: beige }} /> +55 19 99422-9845
+              <MessageCircle className="h-4 w-4" style={{ color: beige }} /> +55 19 99541-1832
             </a>
             <a href={EMAIL} className="flex items-center gap-2 hover:text-white">
               <Mail className="h-4 w-4" style={{ color: beige }} /> contato@elizadesign.com.br
