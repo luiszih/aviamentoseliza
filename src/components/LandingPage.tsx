@@ -628,6 +628,27 @@ function Depoimentos() {
 /* ---------- Instagram ---------- */
 
 function InstagramFeed() {
+  const posts = [
+    "DWqzGgVjTwP",
+    "DRu1ePgkTYJ",
+    "DTsXLEcEf3H",
+    "DUnlb3HkdpY",
+    "DVONXrnkaZt",
+    "DWGwAGwjWe0",
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [perView, setPerView] = useState(1);
+
+  if (typeof window !== "undefined") {
+    // sync perView on mount/resize
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useStateOnce(setPerView);
+  }
+
+  const totalGroups = Math.max(1, posts.length - perView + 1);
+  const safeIndex = Math.min(currentIndex, totalGroups - 1);
+  const slideWidth = 100 / perView;
+
   return (
     <section className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4">
@@ -651,29 +672,82 @@ function InstagramFeed() {
             <Instagram className="h-5 w-5" /> @elizaacessoriodesign
           </a>
         </div>
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
-          {[
-            "DWqzGgVjTwP",
-            "DRu1ePgkTYJ",
-            "DTsXLEcEf3H",
-            "DUnlb3HkdpY",
-            "DVONXrnkaZt",
-            "DWGwAGwjWe0",
-          ].map((id) => (
+        <div className="mt-12 relative">
+          <div className="overflow-hidden">
             <div
-              key={id}
-              className="relative aspect-square w-full overflow-hidden rounded-lg bg-neutral-100 shadow-sm"
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${safeIndex * slideWidth}%)` }}
             >
-              <iframe
-                src={`https://www.instagram.com/p/${id}/embed`}
-                title={`Instagram post ${id}`}
-                loading="lazy"
-                allow="encrypted-media"
-                scrolling="no"
-                className="absolute inset-0 h-full w-full border-0"
-              />
+              {posts.map((id) => (
+                <div
+                  key={id}
+                  className="shrink-0 px-2"
+                  style={{ width: `${slideWidth}%` }}
+                >
+                  <div
+                    className="relative w-full overflow-hidden rounded-xl"
+                    style={{ background: "#f5f0eb", aspectRatio: "4 / 5" }}
+                  >
+                    <iframe
+                      src={`https://www.instagram.com/p/${id}/embed/`}
+                      title={`Instagram post ${id}`}
+                      loading="lazy"
+                      scrolling="no"
+                      frameBorder={0}
+                      allowTransparency
+                      allow="encrypted-media"
+                      className="absolute inset-0 h-full w-full border-0"
+                      style={{ pointerEvents: "none" }}
+                    />
+                    <a
+                      href={`https://www.instagram.com/p/${id}/`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Ver no Instagram"
+                      aria-label="Ver no Instagram"
+                      className="absolute inset-0 z-10 cursor-pointer"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
+            disabled={safeIndex === 0}
+            aria-label="Anterior"
+            className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full bg-white shadow-md flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed transition"
+            style={{ color: brown }}
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button
+            type="button"
+            onClick={() => setCurrentIndex((i) => Math.min(totalGroups - 1, i + 1))}
+            disabled={safeIndex >= totalGroups - 1}
+            aria-label="Próximo"
+            className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full bg-white shadow-md flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed transition"
+            style={{ color: brown }}
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+
+          <div className="mt-6 flex items-center justify-center gap-1.5">
+            {Array.from({ length: totalGroups }).map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setCurrentIndex(i)}
+                aria-label={`Ir para grupo ${i + 1}`}
+                className="h-2 w-2 rounded-full transition"
+                style={{
+                  background: i === safeIndex ? brown : "rgba(200,148,111,0.25)",
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
