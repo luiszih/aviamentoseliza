@@ -3,7 +3,7 @@ import {
   Award, ShieldCheck, Factory, Sparkles, ArrowRight, Check, MessageCircle,
   Mail, Instagram, MapPin, ChevronDown, Palette, FileText, CheckCircle2,
   Cog, Truck, ClipboardList, Scissors, Footprints, Star, Image as ImageIcon,
-  Download, Send, Loader2, Heart, Gem,
+  Download, Send, Loader2, Heart, Gem, ChevronLeft, ChevronRight,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
