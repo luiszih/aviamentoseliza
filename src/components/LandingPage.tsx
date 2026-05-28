@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Award, ShieldCheck, Factory, Sparkles, ArrowRight, Check, MessageCircle,
   Mail, Instagram, MapPin, ChevronDown, Palette, FileText, CheckCircle2,
@@ -639,11 +639,12 @@ function InstagramFeed() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [perView, setPerView] = useState(1);
 
-  if (typeof window !== "undefined") {
-    // sync perView on mount/resize
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useStateOnce(setPerView);
-  }
+  useEffect(() => {
+    const update = () => setPerView(window.innerWidth >= 768 ? 3 : 1);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   const totalGroups = Math.max(1, posts.length - perView + 1);
   const safeIndex = Math.min(currentIndex, totalGroups - 1);
