@@ -651,20 +651,28 @@ function InstagramFeed() {
             <Instagram className="h-5 w-5" /> @elizaacessoriodesign
           </a>
         </div>
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <a
-              key={i}
-              href={INSTAGRAM}
-              target="_blank"
-              rel="noopener"
-              className="block overflow-hidden rounded-lg group"
+        <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
+          {[
+            "DWqzGgVjTwP",
+            "DRu1ePgkTYJ",
+            "DTsXLEcEf3H",
+            "DUnlb3HkdpY",
+            "DVONXrnkaZt",
+            "DWGwAGwjWe0",
+          ].map((id) => (
+            <div
+              key={id}
+              className="relative aspect-square w-full overflow-hidden rounded-lg bg-neutral-100 shadow-sm"
             >
-              <PhotoPlaceholder
-                label={`Post ${i + 1}`}
-                className="aspect-square w-full transition-transform duration-500 group-hover:scale-105"
+              <iframe
+                src={`https://www.instagram.com/p/${id}/embed`}
+                title={`Instagram post ${id}`}
+                loading="lazy"
+                allow="encrypted-media"
+                scrolling="no"
+                className="absolute inset-0 h-full w-full border-0"
               />
-            </a>
+            </div>
           ))}
         </div>
       </div>
