@@ -34,11 +34,15 @@ export const Route = createRootRoute({
       { title: "Eliza Acessórios & Design — Fábrica de acessórios premium há 30 anos" },
       { name: "description", content: "Aviamentos, brindes corporativos e bijuterias com qualidade de joalheria. Certificação FAMA e ABVTEX Ouro. Solicite seu orçamento." },
       { name: "author", content: "Eliza Design" },
-      { property: "og:title", content: "Eliza Acessórios & Design — Acessórios metálicos sob demanda" },
-      { property: "og:description", content: "30 anos de fábrica própria. Private label premium para moda, brindes corporativos e atacado." },
+      { property: "og:title", content: "Eliza Acessórios & Design — Fábrica de acessórios premium há 30 anos" },
+      { property: "og:description", content: "Aviamentos, brindes corporativos e bijuterias com qualidade de joalheria. Certificação FAMA e ABVTEX Ouro. Solicite seu orçamento." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Eliza Acessórios & Design — Fábrica de acessórios premium há 30 anos" },
+      { name: "twitter:description", content: "Aviamentos, brindes corporativos e bijuterias com qualidade de joalheria. Certificação FAMA e ABVTEX Ouro. Solicite seu orçamento." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/78914486-df95-485f-bb15-22ad89a296b8/id-preview-eb250123--3ef45871-dd7d-4a3d-ae16-c49b37b83c65.lovable.app-1780011064319.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/78914486-df95-485f-bb15-22ad89a296b8/id-preview-eb250123--3ef45871-dd7d-4a3d-ae16-c49b37b83c65.lovable.app-1780011064319.png" },
     ],
     links: [
       {
