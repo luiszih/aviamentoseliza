@@ -223,24 +223,13 @@ function Portfolio() {
               style={{ borderColor: `${caramel}40` }}
             >
               <PhotoPlaceholder label={c.photo} className="aspect-[4/3] w-full rounded-none border-0 border-b-2" />
-              <div className="p-6 flex flex-col flex-1">
+              <div className="p-6 flex flex-col items-center justify-center text-center gap-3 flex-1">
                 <h3 className="font-bold text-xl text-neutral-800">{c.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-neutral-600 flex-1">{c.desc}</p>
-                <div className="mt-5 flex items-center gap-2 text-sm" style={{ color: brown }}>
+                <p className="text-sm leading-relaxed text-neutral-600">{c.desc}</p>
+                <div className="flex items-center gap-2 text-sm" style={{ color: brown }}>
                   <Check className="h-4 w-4" style={{ color: caramel }} />
                   <span className="font-semibold">Pedido mínimo: 500 unidades</span>
                 </div>
-                <a
-                  href={CATALOG_URL}
-                  target="_blank"
-                  rel="noopener"
-                  className="mt-5 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-colors"
-                  style={{ background: caramel, color: "#FFFFFF" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = brown)}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = caramel)}
-                >
-                  Ver no catálogo <ArrowRight className="h-4 w-4" />
-                </a>
               </div>
             </article>
           ))}
