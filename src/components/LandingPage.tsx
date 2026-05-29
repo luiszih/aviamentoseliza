@@ -181,21 +181,25 @@ function Portfolio() {
       title: "Fivelas",
       desc: "Fivelas para bolsas, calçados, cintos e vestuário. Produção com cuidado no desenvolvimento e acabamento impecável. Clássicas, geométricas e decorativas.",
       photo: "Flat lay de fivelas com bolsa de couro",
+      image: "/fivela.png",
     },
     {
       title: "Passantes, Ponteiras e Laterais",
       desc: "Passantes e laterais para lingerie, beachwear e moda. Ponteiras para cordões e amarrações. Variedade de formatos em dourado, prateado e rosé.",
       photo: "Flat lay de passantes com biquíni aplicado",
+      image: "/ponteira.png",
     },
     {
       title: "Pingentes",
       desc: "Pingentes decorativos e personalizados para moda, calçados e acessórios. Temáticos, com logos de marca ou exclusivos sob encomenda.",
       photo: "Flat lay de pingentes variados",
+      image: "/pingente.png",
     },
     {
       title: "Reguladores",
       desc: "Reguladores para sutiãs, lingerie e beachwear. Disponíveis em múltiplos tamanhos, de 4mm a 26mm, e banhos: dourado, níquel, grafite e rosé.",
       photo: "Flat lay de reguladores com sutiã aplicado",
+      image: "/regulador.png",
     },
   ];
 
