@@ -251,13 +251,13 @@ function Portfolio() {
 /* ---------- Galeria ---------- */
 
 function Galeria() {
-  const fotos = [
-    "Botões",
-    "Fivelas",
-    "Passantes, ponteiras e laterais",
-    "Pingentes — série 1",
-    "Pingentes — série 2 (licenciados)",
-    "Reguladores",
+  const fotos: { label: string; src?: string; alt?: string }[] = [
+    { label: "Botões" },
+    { label: "Fivelas", src: "/fivelas.jpg", alt: "Fivelas metálicas Eliza Acessórios" },
+    { label: "Passantes, ponteiras e laterais", src: "/passantes-ponteiras.jpg", alt: "Passantes ponteiras e laterais Eliza Acessórios" },
+    { label: "Pingentes — série 1", src: "/pingentes.jpg", alt: "Pingentes Eliza Acessórios" },
+    { label: "Pingentes — série 2 (licenciados)", src: "/pingentes-licenciados.jpg", alt: "Pingentes licenciados Eliza Acessórios" },
+    { label: "Reguladores", src: "/reguladores.jpg", alt: "Reguladores metálicos Eliza Acessórios" },
   ];
   return (
     <section className="py-20 md:py-28" style={{ background: offWhite }}>
@@ -272,11 +272,19 @@ function Galeria() {
         </div>
         <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
           {fotos.map((f) => (
-            <div key={f} className="overflow-hidden rounded-xl group cursor-pointer">
-              <PhotoPlaceholder
-                label={f}
-                className="aspect-square w-full transition-transform duration-500 group-hover:scale-105"
-              />
+            <div key={f.label} className="overflow-hidden rounded-xl group cursor-pointer aspect-square">
+              {f.src ? (
+                <img
+                  src={f.src}
+                  alt={f.alt}
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <PhotoPlaceholder
+                  label={f.label}
+                  className="aspect-square w-full transition-transform duration-500 group-hover:scale-105"
+                />
+              )}
             </div>
           ))}
         </div>
