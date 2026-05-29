@@ -170,11 +170,12 @@ function Hero() {
 /* ---------- Portfólio (5 cards) ---------- */
 
 function Portfolio() {
-  const cards = [
+  const cards: { title: string; desc: string; photo: string; image?: string }[] = [
     {
       title: "Botões",
       desc: "Botões metálicos em acabamento preciso para moda e calçados. Redondos, quadrados, decorativos e funcionais. Disponíveis em dourado, prateado, ouro velho e grafite.",
       photo: "Flat lay de botões metálicos variados",
+      image: "/botoes-eliza.jpg",
     },
     {
       title: "Fivelas",
@@ -222,7 +223,15 @@ function Portfolio() {
               className="group flex flex-col rounded-2xl border bg-white overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl"
               style={{ borderColor: `${caramel}40` }}
             >
-              <PhotoPlaceholder label={c.photo} className="aspect-[4/3] w-full rounded-none border-0 border-b-2" />
+              {c.image ? (
+                <img
+                  src={c.image}
+                  alt={c.title}
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              ) : (
+                <PhotoPlaceholder label={c.photo} className="aspect-[4/3] w-full rounded-none border-0 border-b-2" />
+              )}
               <div className="p-6 flex flex-col items-center justify-center text-center gap-3 flex-1">
                 <h3 className="font-bold text-xl text-neutral-800">{c.title}</h3>
                 <p className="text-sm leading-relaxed text-neutral-600">{c.desc}</p>
