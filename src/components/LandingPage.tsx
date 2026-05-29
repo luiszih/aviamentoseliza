@@ -518,7 +518,7 @@ function CatalogoDownload() {
             <img
               src="/capa-catalogo-eliza-2026.jpg"
               alt="Catálogo de Aviamentos Eliza 2026"
-              className="aspect-[3/4] w-full max-w-xs shadow-2xl rounded-xl object-cover mx-0 my-[183px] pt-0"
+              className="w-full max-w-sm h-auto shadow-2xl rounded-xl object-contain"
             />
           </div>
         </div>
