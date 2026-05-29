@@ -350,11 +350,11 @@ function Diferenciais() {
             </div>
           ))}
         </div>
-        <div className="mt-12">
+        <div className="mt-12 w-full">
           <img
             src="/fachada-eliza-final.jpg"
             alt="Fachada da fábrica Eliza em Limeira/SP"
-            className="aspect-[3/1] w-full rounded-xl object-fill"
+            className="w-full rounded-xl object-cover object-center min-h-[280px] md:min-h-0 md:aspect-[3/1] md:object-fill"
           />
         </div>
       </div>
