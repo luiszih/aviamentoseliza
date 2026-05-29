@@ -156,9 +156,10 @@ function Hero() {
         </div>
 
         <div className="md:col-span-5 hidden md:block">
-          <PhotoPlaceholder
-            label="Aviamentos aplicados ou flat lay dourado"
-            className="aspect-square w-full"
+          <img
+            src="/capa-catalogo-eliza-2026.jpg"
+            alt="Capa do catálogo Aviamentos Eliza Acessórios 2026"
+            className="w-full rounded-xl shadow-2xl object-cover aspect-[4/5]"
           />
         </div>
       </div>
