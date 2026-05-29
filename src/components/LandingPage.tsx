@@ -114,8 +114,7 @@ function Hero() {
             de qualquer coleção.
           </h1>
           <p className="mt-6 max-w-xl text-base md:text-lg font-light text-white/85">
-            Fábrica própria de aviamentos metálicos para moda, calçados, lingerie e beachwear.
-            30 anos de produção com atenção a cada detalhe.
+            Fábrica própria de aviamentos metálicos para moda, calçados, lingerie e beachwear.&nbsp;
           </p>
           <div className="mt-9 flex flex-col sm:flex-row gap-3">
             <a
@@ -352,9 +351,9 @@ function Diferenciais() {
         </div>
         <div className="mt-12">
           <img
-            src="/fachada-eliza.webp"
+            src="/fachada-eliza-nova.jpg"
             alt="Fachada da fábrica Eliza em Limeira/SP"
-            className="aspect-[3/1] w-full object-cover rounded-xl"
+            className="aspect-[3/1] w-full rounded-xl object-contain"
           />
         </div>
       </div>
