@@ -14,7 +14,7 @@ const WHATSAPP_FORM_MSG = "Olá! Acabei de preencher o formulário no site e gos
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
 const EMAIL = "mailto:contato@elizadesign.com.br";
 const INSTAGRAM = "https://instagram.com/elizaacessoriodesign";
-const CATALOG_URL = "#"; // TODO: substituir pela URL do PDF do Catálogo 2026
+const CATALOG_URL = "/catalogo-aviamentos-eliza-2026.pdf";
 
 // Brand palette
 const beige = "#FFD7AC";
