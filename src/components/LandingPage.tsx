@@ -351,7 +351,11 @@ function Diferenciais() {
           ))}
         </div>
         <div className="mt-12">
-          <PhotoPlaceholder label="Ambiente interno da fábrica em Limeira/SP" className="aspect-[3/1] w-full" />
+          <img
+            src="/fachada-eliza.webp"
+            alt="Fachada da fábrica Eliza em Limeira/SP"
+            className="aspect-[3/1] w-full object-cover rounded-xl"
+          />
         </div>
       </div>
     </section>
