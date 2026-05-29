@@ -252,7 +252,7 @@ function Portfolio() {
 
 function Galeria() {
   const fotos: { label: string; src?: string; alt?: string }[] = [
-    { label: "Botões" },
+    { label: "Botões", src: "/botoes.jpg", alt: "Botões metálicos Eliza Acessórios" },
     { label: "Fivelas", src: "/fivelas.jpg", alt: "Fivelas metálicas Eliza Acessórios" },
     { label: "Passantes, ponteiras e laterais", src: "/passantes-ponteiras.jpg", alt: "Passantes ponteiras e laterais Eliza Acessórios" },
     { label: "Pingentes — série 1", src: "/pingentes.jpg", alt: "Pingentes Eliza Acessórios" },
