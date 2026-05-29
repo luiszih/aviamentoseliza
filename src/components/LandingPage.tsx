@@ -515,9 +515,10 @@ function CatalogoDownload() {
             </a>
           </div>
           <div className="p-8 md:p-12 flex items-center justify-center" style={{ background: beige }}>
-            <PhotoPlaceholder
-              label="Capa do Catálogo 2026"
-              className="aspect-[3/4] w-full max-w-xs shadow-2xl"
+            <img
+              src="/capa-catalogo-eliza-2026.jpg"
+              alt="Catálogo de Aviamentos Eliza 2026"
+              className="aspect-[3/4] w-full max-w-xs shadow-2xl rounded-xl object-cover"
             />
           </div>
         </div>
