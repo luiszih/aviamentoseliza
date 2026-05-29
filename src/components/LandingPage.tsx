@@ -618,7 +618,7 @@ function Depoimentos() {
             mais valorizadas pelo nosso público."
           </p>
           <div className="mt-6 text-sm text-neutral-500">
-            — Depoimento ilustrativo. Em breve substituiremos por feedbacks reais de nossos clientes.
+            {"\n"}
           </div>
         </div>
       </div>
