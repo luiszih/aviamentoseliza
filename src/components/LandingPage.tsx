@@ -170,7 +170,7 @@ function Hero() {
 /* ---------- Portfólio (5 cards) ---------- */
 
 function Portfolio() {
-  const cards = [
+  const cards: { title: string; desc: string; photo: string; image?: string }[] = [
     {
       title: "Botões",
       desc: "Botões metálicos em acabamento preciso para moda e calçados. Redondos, quadrados, decorativos e funcionais. Disponíveis em dourado, prateado, ouro velho e grafite.",
