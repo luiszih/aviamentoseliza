@@ -1,16 +1,42 @@
 import { useEffect, useState } from "react";
 import {
-  Award, ShieldCheck, Factory, Sparkles, ArrowRight, Check, MessageCircle,
-  Mail, Instagram, MapPin, ChevronDown, Palette, FileText, CheckCircle2,
-  Cog, Truck, ClipboardList, Scissors, Footprints, Star, Image as ImageIcon,
-  Download, Send, Loader2, Heart, Gem, ChevronLeft, ChevronRight,
+  Award,
+  ShieldCheck,
+  Factory,
+  Sparkles,
+  ArrowRight,
+  Check,
+  MessageCircle,
+  Mail,
+  Instagram,
+  MapPin,
+  ChevronDown,
+  Palette,
+  FileText,
+  CheckCircle2,
+  Cog,
+  Truck,
+  ClipboardList,
+  Scissors,
+  Footprints,
+  Star,
+  Image as ImageIcon,
+  Download,
+  Send,
+  Loader2,
+  Heart,
+  Gem,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
-const WHATSAPP_NUMBER = "5519995411832";
-const WHATSAPP_MSG = "Olá! Tenho interesse em aviamentos personalizados para minha coleção. Gostaria de mais informações.";
-const WHATSAPP_FORM_MSG = "Olá! Acabei de preencher o formulário no site e gostaria de saber mais sobre aviamentos personalizados.";
+const WHATSAPP_NUMBER = "5519994229845";
+const WHATSAPP_MSG =
+  "Olá! Tenho interesse em aviamentos personalizados para minha coleção. Gostaria de mais informações.";
+const WHATSAPP_FORM_MSG =
+  "Olá! Acabei de preencher o formulário no site e gostaria de saber mais sobre aviamentos personalizados.";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
 const EMAIL = "mailto:contato@elizadesign.com.br";
 const INSTAGRAM = "https://instagram.com/elizaacessoriodesign";
@@ -51,7 +77,9 @@ function Logo({ light = false }: { light?: boolean }) {
         </span>
       </div>
       <div className="leading-tight">
-        <div className="text-sm font-semibold tracking-wider uppercase" style={{ color }}>Eliza</div>
+        <div className="text-sm font-semibold tracking-wider uppercase" style={{ color }}>
+          Eliza
+        </div>
         <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: accent }}>
           Acessórios & Design
         </div>
@@ -74,18 +102,27 @@ function Hero() {
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.10]"
         style={{
-          backgroundImage:
-            "repeating-linear-gradient(45deg, rgba(255,215,172,0.4) 0 1px, transparent 1px 8px)",
+          backgroundImage: "repeating-linear-gradient(45deg, rgba(255,215,172,0.4) 0 1px, transparent 1px 8px)",
         }}
       />
       <header className="relative mx-auto max-w-7xl px-4 py-6 flex items-center justify-between">
         <Logo light />
         <nav className="hidden md:flex items-center gap-8 text-sm text-white/90">
-          <a href="#portfolio" className="hover:text-white">Portfólio</a>
-          <a href="#diferenciais" className="hover:text-white">Diferenciais</a>
-          <a href="#processo" className="hover:text-white">Processo</a>
-          <a href="#faq" className="hover:text-white">FAQ</a>
-          <a href="#orcamento" className="hover:text-white">Orçamento</a>
+          <a href="#portfolio" className="hover:text-white">
+            Portfólio
+          </a>
+          <a href="#diferenciais" className="hover:text-white">
+            Diferenciais
+          </a>
+          <a href="#processo" className="hover:text-white">
+            Processo
+          </a>
+          <a href="#faq" className="hover:text-white">
+            FAQ
+          </a>
+          <a href="#orcamento" className="hover:text-white">
+            Orçamento
+          </a>
         </nav>
         <a
           href={WHATSAPP_URL}
@@ -114,7 +151,8 @@ function Hero() {
             de qualquer coleção.
           </h1>
           <p className="mt-6 max-w-xl text-base md:text-lg font-light text-white/85">
-            Fábrica própria de aviamentos metálicos para moda, calçados, lingerie e beachwear.&nbsp;
+            Fábrica própria de aviamentos metálicos para moda, calçados, lingerie e beachwear. 30 anos de produção com
+            atenção a cada detalhe.
           </p>
           <div className="mt-9 flex flex-col sm:flex-row gap-3">
             <a
@@ -134,8 +172,14 @@ function Hero() {
               rel="noopener"
               className="inline-flex items-center justify-center gap-2 rounded-full border-2 px-7 py-4 text-base font-semibold transition-colors"
               style={{ borderColor: beige, color: beige }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = beige; e.currentTarget.style.color = brownDark; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = beige; }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = beige;
+                e.currentTarget.style.color = brownDark;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = beige;
+              }}
             >
               <Download className="h-4 w-4" /> Baixar catálogo
             </a>
@@ -156,11 +200,7 @@ function Hero() {
         </div>
 
         <div className="md:col-span-5 hidden md:block">
-          <img
-            src="/capa-catalogo-eliza-2026.jpg"
-            alt="Capa do catálogo Aviamentos Eliza Acessórios 2026"
-            className="w-full rounded-xl shadow-2xl object-cover aspect-[4/5]"
-          />
+          <PhotoPlaceholder label="Aviamentos aplicados ou flat lay dourado" className="aspect-square w-full" />
         </div>
       </div>
     </section>
@@ -210,11 +250,10 @@ function Portfolio() {
             Do regulador ao pingente,{" "}
             <span className="italic font-light" style={{ color: brown }}>
               do conceito ao acabamento
-            </span>.
+            </span>
+            .
           </h2>
-          <p className="mt-4 text-base text-neutral-600">
-            Desenvolvemos sob medida para a identidade da sua marca.
-          </p>
+          <p className="mt-4 text-base text-neutral-600">Desenvolvemos sob medida para a identidade da sua marca.</p>
         </div>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((c) => (
@@ -224,11 +263,7 @@ function Portfolio() {
               style={{ borderColor: `${caramel}40` }}
             >
               {c.image ? (
-                <img
-                  src={c.image}
-                  alt={c.title}
-                  className="aspect-[4/3] w-full object-cover"
-                />
+                <img src={c.image} alt={c.title} className="aspect-[4/3] w-full object-cover" />
               ) : (
                 <PhotoPlaceholder label={c.photo} className="aspect-[4/3] w-full rounded-none border-0 border-b-2" />
               )}
@@ -267,7 +302,10 @@ function Galeria() {
             Catálogo 2026
           </div>
           <h2 className="font-extrabold text-3xl md:text-5xl leading-tight text-neutral-800">
-            Conheça nosso <span className="italic font-light" style={{ color: brown }}>portfólio</span>
+            Conheça nosso{" "}
+            <span className="italic font-light" style={{ color: brown }}>
+              portfólio
+            </span>
           </h2>
         </div>
         <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -329,7 +367,8 @@ function Diferenciais() {
             Tradição certificada,{" "}
             <span className="italic font-light" style={{ color: brown }}>
               precisão industrial
-            </span>.
+            </span>
+            .
           </h2>
         </div>
         <div className="mt-12 grid md:grid-cols-3 gap-6">
@@ -350,11 +389,11 @@ function Diferenciais() {
             </div>
           ))}
         </div>
-        <div className="mt-12 w-full">
+        <div className="mt-12">
           <img
-            src="/fachada-eliza-final.jpg"
+            src="/fachada-eliza.webp"
             alt="Fachada da fábrica Eliza em Limeira/SP"
-            className="w-full rounded-xl object-cover object-center min-h-[280px] md:min-h-0 md:aspect-[3/1] md:object-fill"
+            className="aspect-[3/1] w-full object-cover rounded-xl"
           />
         </div>
       </div>
@@ -381,14 +420,15 @@ function Processo() {
             Como funciona
           </div>
           <h2 className="font-extrabold text-3xl md:text-5xl leading-tight text-neutral-800">
-            Um <span className="italic font-light" style={{ color: brown }}>processo enxuto</span>, do conceito à entrega.
+            Um{" "}
+            <span className="italic font-light" style={{ color: brown }}>
+              processo enxuto
+            </span>
+            , do conceito à entrega.
           </h2>
         </div>
         <div className="mt-14 relative">
-          <div
-            className="absolute top-6 left-0 right-0 h-px hidden md:block"
-            style={{ background: `${caramel}88` }}
-          />
+          <div className="absolute top-6 left-0 right-0 h-px hidden md:block" style={{ background: `${caramel}88` }} />
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
             {steps.map((s, i) => (
               <div key={s.label} className="relative flex flex-col items-center text-center">
@@ -449,7 +489,8 @@ function ParaQuem() {
             Feito para quem{" "}
             <span className="italic font-light" style={{ color: brown }}>
               não negocia qualidade
-            </span>.
+            </span>
+            .
           </h2>
         </div>
         <div className="mt-12 grid md:grid-cols-2 gap-5">
@@ -512,8 +553,8 @@ function CatalogoDownload() {
               de aviamentos 2026
             </h2>
             <p className="mt-5 text-neutral-600 leading-relaxed">
-              Mais de 5 categorias, centenas de referências em dourado, prateado, rosé e grafite.
-              Baixe agora e encontre o aviamento certo para a sua coleção.
+              Mais de 5 categorias, centenas de referências em dourado, prateado, rosé e grafite. Baixe agora e encontre
+              o aviamento certo para a sua coleção.
             </p>
             <a
               href={CATALOG_URL}
@@ -546,10 +587,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="border-b" style={{ borderColor: `${brown}33` }}>
-      <button
-        onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 py-5 text-left"
-      >
+      <button onClick={() => setOpen(!open)} className="flex w-full items-center justify-between gap-4 py-5 text-left">
         <span className="font-semibold text-base md:text-lg text-neutral-800">{q}</span>
         <ChevronDown
           className="h-5 w-5 shrink-0 transition-transform"
@@ -591,10 +629,16 @@ function Faq() {
           Perguntas frequentes
         </div>
         <h2 className="font-extrabold text-3xl md:text-5xl leading-tight mb-10 text-neutral-800">
-          Tudo o que <span className="italic font-light" style={{ color: brown }}>você precisa saber</span>.
+          Tudo o que{" "}
+          <span className="italic font-light" style={{ color: brown }}>
+            você precisa saber
+          </span>
+          .
         </h2>
         <div>
-          {faqs.map((f) => <FaqItem key={f.q} {...f} />)}
+          {faqs.map((f) => (
+            <FaqItem key={f.q} {...f} />
+          ))}
         </div>
       </div>
     </section>
@@ -614,25 +658,20 @@ function Depoimentos() {
           Parceria que se{" "}
           <span className="italic font-light" style={{ color: brown }}>
             constrói no detalhe
-          </span>.
+          </span>
+          .
         </h2>
-        <div
-          className="mt-12 rounded-3xl p-10 bg-white"
-          style={{ border: `1px solid ${caramel}55` }}
-        >
+        <div className="mt-12 rounded-3xl p-10 bg-white" style={{ border: `1px solid ${caramel}55` }}>
           <div className="flex gap-1 mb-4 justify-center">
             {Array.from({ length: 5 }).map((_, i) => (
               <Star key={i} className="h-5 w-5 fill-current" style={{ color: caramel }} />
             ))}
           </div>
           <p className="text-lg italic font-light leading-relaxed text-neutral-700">
-            "Trabalhar com uma fábrica que tem 30 anos de experiência faz toda a diferença.
-            O cuidado no desenvolvimento e a consistência nas entregas se traduzem em coleções
-            mais valorizadas pelo nosso público."
+            "Trabalhar com uma fábrica que tem 30 anos de experiência faz toda a diferença. O cuidado no desenvolvimento
+            e a consistência nas entregas se traduzem em coleções mais valorizadas pelo nosso público."
           </p>
-          <div className="mt-6 text-sm text-neutral-500">
-            {"\n"}
-          </div>
+          <div className="mt-6 text-sm text-neutral-500">{"\n"}</div>
         </div>
       </div>
     </section>
@@ -642,14 +681,7 @@ function Depoimentos() {
 /* ---------- Instagram ---------- */
 
 function InstagramFeed() {
-  const posts = [
-    "DWqzGgVjTwP",
-    "DRu1ePgkTYJ",
-    "DTsXLEcEf3H",
-    "DUnlb3HkdpY",
-    "DVONXrnkaZt",
-    "DWGwAGwjWe0",
-  ];
+  const posts = ["DWqzGgVjTwP", "DRu1ePgkTYJ", "DTsXLEcEf3H", "DUnlb3HkdpY", "DVONXrnkaZt", "DWGwAGwjWe0"];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [perView, setPerView] = useState(1);
 
@@ -694,11 +726,7 @@ function InstagramFeed() {
               style={{ transform: `translateX(-${safeIndex * slideWidth}%)` }}
             >
               {posts.map((id) => (
-                <div
-                  key={id}
-                  className="shrink-0 px-2"
-                  style={{ width: `${slideWidth}%` }}
-                >
+                <div key={id} className="shrink-0 px-2" style={{ width: `${slideWidth}%` }}>
                   <div
                     className="relative w-full overflow-hidden rounded-xl"
                     style={{ background: "#f5f0eb", aspectRatio: "4 / 5" }}
@@ -803,10 +831,7 @@ function FormularioOrcamento() {
       setSent(true);
       toast.success("Recebemos sua solicitação!");
       setTimeout(() => {
-        window.open(
-          `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_FORM_MSG)}`,
-          "_blank"
-        );
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_FORM_MSG)}`, "_blank");
       }, 800);
     } catch (err) {
       console.error(err);
@@ -833,14 +858,9 @@ function FormularioOrcamento() {
         </div>
 
         {sent ? (
-          <div
-            className="mt-10 rounded-2xl bg-white p-10 text-center"
-            style={{ border: `1px solid ${brown}33` }}
-          >
+          <div className="mt-10 rounded-2xl bg-white p-10 text-center" style={{ border: `1px solid ${brown}33` }}>
             <CheckCircle2 className="h-14 w-14 mx-auto mb-4" style={{ color: brown }} />
-            <h3 className="font-bold text-xl text-neutral-800">
-              Recebemos sua solicitação.
-            </h3>
+            <h3 className="font-bold text-xl text-neutral-800">Recebemos sua solicitação.</h3>
             <p className="mt-2 text-neutral-600">
               Nossa equipe entrará em contato em breve. Redirecionando para o WhatsApp...
             </p>
@@ -949,8 +969,7 @@ function CtaFinal() {
       <div
         className="pointer-events-none absolute inset-0 opacity-20"
         style={{
-          backgroundImage:
-            "repeating-linear-gradient(135deg, rgba(255,215,172,0.3) 0 1px, transparent 1px 10px)",
+          backgroundImage: "repeating-linear-gradient(135deg, rgba(255,215,172,0.3) 0 1px, transparent 1px 10px)",
         }}
       />
       <div className="relative mx-auto max-w-4xl px-4 text-center">
@@ -961,8 +980,7 @@ function CtaFinal() {
           </span>
         </h2>
         <p className="mt-6 text-base md:text-lg font-light max-w-2xl mx-auto text-white/85">
-          30 anos de tradição, certificações globais e cuidado no desenvolvimento de cada peça.
-          Vamos criar juntos.
+          30 anos de tradição, certificações globais e cuidado no desenvolvimento de cada peça. Vamos criar juntos.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -971,8 +989,12 @@ function CtaFinal() {
             rel="noopener"
             className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-5 text-base font-semibold shadow-2xl transition-colors"
             style={{ background: caramel, color: "#FFFFFF" }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = beige) && (e.currentTarget.style.color = brownDark)}
-            onMouseLeave={(e) => (e.currentTarget.style.background = caramel) && (e.currentTarget.style.color = "#FFFFFF")}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.background = beige) && (e.currentTarget.style.color = brownDark)
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = caramel) && (e.currentTarget.style.color = "#FFFFFF")
+            }
           >
             <MessageCircle className="h-5 w-5" /> Falar no WhatsApp
           </a>
@@ -982,8 +1004,14 @@ function CtaFinal() {
             rel="noopener"
             className="inline-flex items-center justify-center gap-2 rounded-full border-2 px-8 py-5 text-base font-semibold transition-colors"
             style={{ borderColor: beige, color: beige }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = beige; e.currentTarget.style.color = brownDark; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = beige; }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = beige;
+              e.currentTarget.style.color = brownDark;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "transparent";
+              e.currentTarget.style.color = beige;
+            }}
           >
             <Download className="h-5 w-5" /> Baixar catálogo
           </a>
@@ -1011,7 +1039,11 @@ function Footer() {
           </div>
           <div className="flex items-start gap-2">
             <MapPin className="h-4 w-4 mt-0.5 shrink-0" style={{ color: beige }} />
-            <span>R. Cedro, 229 A · Vila Queiroz<br />Limeira / SP</span>
+            <span>
+              R. Cedro, 229 A · Vila Queiroz
+              <br />
+              Limeira / SP
+            </span>
           </div>
         </div>
         <div className="text-sm">
@@ -1028,7 +1060,12 @@ function Footer() {
             <a href={INSTAGRAM} target="_blank" rel="noopener" className="flex items-center gap-2 hover:text-white">
               <Instagram className="h-4 w-4" style={{ color: beige }} /> @elizaacessoriodesign
             </a>
-            <a href="https://www.elizadesign.com.br" target="_blank" rel="noopener" className="flex items-center gap-2 hover:text-white">
+            <a
+              href="https://www.elizadesign.com.br"
+              target="_blank"
+              rel="noopener"
+              className="flex items-center gap-2 hover:text-white"
+            >
               <ArrowRight className="h-4 w-4" style={{ color: beige }} /> elizadesign.com.br
             </a>
           </div>
@@ -1049,10 +1086,7 @@ function Footer() {
 
 export function LandingPage() {
   return (
-    <main
-      style={{ fontFamily: "'Sora', system-ui, sans-serif" }}
-      className="bg-white text-neutral-800"
-    >
+    <main style={{ fontFamily: "'Sora', system-ui, sans-serif" }} className="bg-white text-neutral-800">
       <Hero />
       <Portfolio />
       <Galeria />
