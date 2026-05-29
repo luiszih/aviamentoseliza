@@ -366,7 +366,7 @@ function Diferenciais() {
           <img
             src="/fachada-eliza-v3.webp"
             alt="Fachada da fábrica Eliza em Limeira/SP"
-            className="aspect-[3/1] w-full rounded-xl object-contain"
+            className="w-full h-[250px] md:h-[450px] rounded-2xl object-cover"
           />
         </div>
       </div>
