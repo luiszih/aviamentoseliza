@@ -318,11 +318,15 @@ function Diferenciais() {
       icon: ShieldCheck,
       title: "Certificação FAMA, Walt Disney",
       desc: "Habilitados a produzir para marcas globais licenciadas com segurança jurídica, rastreabilidade total e rigorosos padrões de qualidade de produção.",
+      image: "/fama-disney.png",
+      imageAlt: "Certificação FAMA Walt Disney",
     },
     {
       icon: Award,
       title: "ABVTEX Ouro",
       desc: "Processo produtivo ético, sustentável e alinhado aos mais altos padrões do mercado global.",
+      image: "/abvtex-ouro.png",
+      imageAlt: "Certificação ABVTEX Ouro",
     },
     {
       icon: Factory,
@@ -351,12 +355,20 @@ function Diferenciais() {
               className="rounded-2xl p-8 border transition-all hover:-translate-y-1 hover:shadow-lg"
               style={{ borderColor: `${caramel}40`, background: offWhite }}
             >
-              <div
-                className="flex h-14 w-14 items-center justify-center rounded-xl"
-                style={{ background: brown, color: "#FFFFFF" }}
-              >
-                <it.icon className="h-7 w-7" />
-              </div>
+              {it.image ? (
+                <img
+                  src={it.image}
+                  alt={it.imageAlt}
+                  style={{ height: "48px", width: "auto", objectFit: "contain" }}
+                />
+              ) : (
+                <div
+                  className="flex h-14 w-14 items-center justify-center rounded-xl"
+                  style={{ background: brown, color: "#FFFFFF" }}
+                >
+                  <it.icon className="h-7 w-7" />
+                </div>
+              )}
               <h3 className="mt-5 font-bold text-xl text-neutral-800">{it.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-neutral-600">{it.desc}</p>
             </div>
@@ -379,7 +391,6 @@ function Diferenciais() {
 function Processo() {
   const steps = [
     { icon: FileText, label: "Briefing" },
-    { icon: Palette, label: "Pantone" },
     { icon: ClipboardList, label: "Ficha Técnica" },
     { icon: CheckCircle2, label: "Aprovação" },
     { icon: Cog, label: "Produção" },
@@ -401,7 +412,7 @@ function Processo() {
             className="absolute top-6 left-0 right-0 h-px hidden md:block"
             style={{ background: `${caramel}88` }}
           />
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {steps.map((s, i) => (
               <div key={s.label} className="relative flex flex-col items-center text-center">
                 <div
@@ -426,6 +437,12 @@ function Processo() {
 function ParaQuem() {
   const personas = [
     {
+      icon: Heart,
+      title: "Confecção de Lingerie e Beachwear",
+      pain: "Dificuldade em encontrar reguladores e passantes com acabamento consistente em escala.",
+      sol: "Portfólio completo de reguladores, argolas, passantes e pingentes para cada coleção.",
+    },
+    {
       icon: Sparkles,
       title: "Estilista Criativa",
       pain: "Aviamentos genéricos que não traduzem a identidade da coleção.",
@@ -436,12 +453,6 @@ function ParaQuem() {
       title: "Fabricante de Calçados",
       pain: "Componentes inconsistentes que comprometem o produto final.",
       sol: "Fábrica própria com controle individual de qualidade e pontualidade na entrega.",
-    },
-    {
-      icon: Heart,
-      title: "Confecção de Lingerie e Beachwear",
-      pain: "Dificuldade em encontrar reguladores e passantes com acabamento consistente em escala.",
-      sol: "Portfólio completo de reguladores, argolas, passantes e pingentes para cada coleção.",
     },
     {
       icon: ShieldCheck,
@@ -455,7 +466,7 @@ function ParaQuem() {
       <div className="mx-auto max-w-7xl px-4">
         <div className="max-w-2xl">
           <div className="text-xs tracking-[0.3em] uppercase mb-3" style={{ color: brownDark }}>
-            Para quem é
+            Para que é:
           </div>
           <h2 className="font-extrabold text-3xl md:text-5xl leading-tight text-neutral-800">
             Feito para quem{" "}
@@ -581,11 +592,11 @@ function Faq() {
     },
     {
       q: "Quais acabamentos estão disponíveis?",
-      a: "Oferecemos dourado em diferentes tons, níquel (prateado), rosé, grafite, ônix e opções coloridas personalizadas. Cada banho passa por rigoroso controle de qualidade.",
+      a: "Trabalhamos com banho de ouro e banho de prata. Cada peça passa por rigoroso controle de qualidade para garantir durabilidade e acabamento premium.",
     },
     {
       q: "Como funciona o desenvolvimento personalizado?",
-      a: "Nosso processo começa com o seu briefing. Desenvolvemos a proposta técnica com Pantone e acabamentos, criamos uma amostra física para sua aprovação e só então iniciamos a produção em escala, com acompanhamento dedicado em cada etapa.",
+      a: "Nosso processo começa com o seu briefing. Desenvolvemos a ficha técnica completa, criamos uma amostra física para sua aprovação e só então iniciamos a produção em escala, com acompanhamento dedicado em cada etapa.",
     },
     {
       q: "Qual o prazo de entrega?",
