@@ -600,7 +600,7 @@ function Faq() {
     },
     {
       q: "Qual o prazo de entrega?",
-      a: "A partir de 30 dias úteis após aprovação da amostra, variando conforme a complexidade do projeto. Recomendamos pedir com antecedência mínima de 3 meses para garantir tranquilidade na entrega.",
+      a: "A partir de 30 dias úteis após aprovação da amostra, variando conforme a complexidade do projeto.",
     },
     {
       q: "A certificação FAMA cobre quais produtos?",
