@@ -313,7 +313,7 @@ function Galeria() {
 /* ---------- Diferenciais (3) ---------- */
 
 function Diferenciais() {
-  const items = [
+  const items: { icon: typeof ShieldCheck; title: string; desc: string; image?: string; imageAlt?: string }[] = [
     {
       icon: ShieldCheck,
       title: "Certificação FAMA, Walt Disney",
