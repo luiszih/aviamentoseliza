@@ -587,7 +587,7 @@ function Faq() {
     },
     {
       q: "Quais acabamentos estão disponíveis?",
-      a: "Trabalhamos com banho de ouro e banho de prata. Cada peça passa por rigoroso controle de qualidade para garantir durabilidade e acabamento premium.",
+      a: "Trabalhamos com Banho dourado, níquel, grafite, ouro velha, prata velha. Cada peça passa por rigoroso controle de qualidade para garantir durabilidade e acabamento premium.",
     },
     {
       q: "Como funciona o desenvolvimento personalizado?",
