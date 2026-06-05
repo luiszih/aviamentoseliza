@@ -624,6 +624,25 @@ function Faq() {
 /* ---------- Depoimentos ---------- */
 
 function Depoimentos() {
+  const feedbacks = [
+    { src: feedback1Asset.url, alt: "Depoimento de cliente Eliza - ficaram lindos os produtos" },
+    { src: feedback2Asset.url, alt: "Depoimento de cliente Eliza - gostamos da qualidade e da entrega" },
+  ];
+  const [api, setApi] = React.useState<CarouselApi | null>(null);
+  const [current, setCurrent] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) return;
+    const onSelect = () => setCurrent(api.selectedScrollSnap());
+    onSelect();
+    api.on("select", onSelect);
+    api.on("reInit", onSelect);
+    return () => {
+      api.off("select", onSelect);
+      api.off("reInit", onSelect);
+    };
+  }, [api]);
+
   return (
     <section className="py-20 md:py-28" style={{ background: offWhite }}>
       <div className="mx-auto max-w-6xl px-4 text-center">
@@ -636,21 +655,38 @@ function Depoimentos() {
             constrói no detalhe
           </span>.
         </h2>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 justify-items-center">
-          <img
-            src={feedback1Asset.url}
-            alt="Depoimento de cliente Eliza - ficaram lindos os produtos"
-            loading="lazy"
-            decoding="async"
-            className="w-full max-w-md h-auto object-contain rounded-3xl shadow-lg"
-          />
-          <img
-            src={feedback2Asset.url}
-            alt="Depoimento de cliente Eliza - gostamos da qualidade e da entrega"
-            loading="lazy"
-            decoding="async"
-            className="w-full max-w-md h-auto object-contain rounded-3xl shadow-lg"
-          />
+        <div className="mt-12 mx-auto max-w-xl">
+          <Carousel opts={{ loop: true, align: "center" }} setApi={setApi}>
+            <CarouselContent>
+              {feedbacks.map((fb, i) => (
+                <CarouselItem key={i}>
+                  <div className="flex items-center justify-center px-2">
+                    <img
+                      src={fb.src}
+                      alt={fb.alt}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-auto max-h-[70vh] object-contain rounded-3xl shadow-lg"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+          <div className="mt-6 flex items-center justify-center gap-2">
+            {feedbacks.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                aria-label={`Ir para depoimento ${i + 1}`}
+                onClick={() => api?.scrollTo(i)}
+                className={`h-2 rounded-full transition-all ${
+                  current === i ? "w-6" : "w-2 opacity-40"
+                }`}
+                style={{ background: brown }}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
