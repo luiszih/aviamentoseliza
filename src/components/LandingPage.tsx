@@ -315,17 +315,17 @@ function Galeria() {
 function Diferenciais() {
   const items: { icon: typeof ShieldCheck; title: string; desc: string; image?: string; imageAlt?: string }[] = [
     {
-      icon: ShieldCheck,
-      title: "Certificação FAMA, Walt Disney",
-      desc: "Habilitados a produzir para marcas globais licenciadas com segurança jurídica, rastreabilidade total e rigorosos padrões de qualidade de produção.",
-      image: "/fama-disney.png",
+      icon: Factory,
+      title: "Certificado FAMA Walt Disney",
+      desc: "Garanta conformidade social e ética em sua cadeia de suprimentos com a certificação oficial para parceiros Disney.",
+      image: "/logo-fama.jpg",
       imageAlt: "Certificação FAMA Walt Disney",
     },
     {
-      icon: Award,
-      title: "ABVTEX Ouro",
-      desc: "Processo produtivo ético, sustentável e alinhado aos mais altos padrões do mercado global.",
-      image: "/abvtex-ouro.png",
+      icon: Factory,
+      title: "Selo ABVTEX Ouro",
+      desc: "Comprove o compromisso com a sustentabilidade e práticas trabalhistas justas com o mais alto nível de certificação ABVTEX.",
+      image: "/logo-abvtex.jpg",
       imageAlt: "Certificação ABVTEX Ouro",
     },
     {
@@ -355,19 +355,19 @@ function Diferenciais() {
               className="rounded-2xl p-8 border transition-all hover:-translate-y-1 hover:shadow-lg"
               style={{ borderColor: `${caramel}40`, background: offWhite }}
             >
-              {it.image ? (
+              <div
+                className="flex h-14 w-14 items-center justify-center rounded-xl"
+                style={{ background: brown, color: "#FFFFFF" }}
+              >
+                <it.icon className="h-7 w-7" />
+              </div>
+              {it.image && (
                 <img
                   src={it.image}
                   alt={it.imageAlt}
-                  style={{ height: "48px", width: "auto", objectFit: "contain" }}
+                  className="mt-4"
+                  style={{ height: "36px", width: "auto", objectFit: "contain" }}
                 />
-              ) : (
-                <div
-                  className="flex h-14 w-14 items-center justify-center rounded-xl"
-                  style={{ background: brown, color: "#FFFFFF" }}
-                >
-                  <it.icon className="h-7 w-7" />
-                </div>
               )}
               <h3 className="mt-5 font-bold text-xl text-neutral-800">{it.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-neutral-600">{it.desc}</p>
