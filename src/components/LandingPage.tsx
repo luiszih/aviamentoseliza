@@ -314,50 +314,21 @@ function Galeria() {
 
 function Diferenciais() {
   const FamaIcon = ({ className }: { className?: string }) => (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      {/* F */}
-      <path d="M3 4 V20" />
-      <path d="M3 4 H8" />
-      <path d="M3 12 H7" />
-      {/* A */}
-      <path d="M9.5 20 L11.25 4 L13 20" />
-      <path d="M10 15 H12.5" />
-      {/* M */}
-      <path d="M14.5 20 V4 L16.25 12 L18 4 V20" />
-      {/* A */}
-      <path d="M19.5 20 L20.75 4 L22 20" />
-      <path d="M19.9 15 H21.6" />
-    </svg>
+    <img
+      src="/cert-fama.svg"
+      alt="Certificado FAMA"
+      className={`${className ?? ""} object-contain`}
+      style={{ filter: "brightness(0) invert(1)" }}
+    />
   );
 
   const AbvtexIcon = ({ className }: { className?: string }) => (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.75}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      {/* needle */}
-      <line x1="4" y1="20" x2="19" y2="5" />
-      {/* needle eye */}
-      <circle cx="18.2" cy="5.8" r="1.1" />
-      {/* needle tip */}
-      <path d="M3.4 20.6 L5 19" />
-      {/* thread curving through */}
-      <path d="M7 17 C 10 13, 14 13, 17 9" />
-      <path d="M9 19 C 12 16, 15 15, 18 12" />
-    </svg>
+    <img
+      src="/cert-abvtex.svg"
+      alt="Selo ABVTEX Ouro"
+      className={`${className ?? ""} object-contain`}
+      style={{ filter: "brightness(0) invert(1)" }}
+    />
   );
 
   const items: { icon: React.ComponentType<{ className?: string }>; title: string; desc: string }[] = [
