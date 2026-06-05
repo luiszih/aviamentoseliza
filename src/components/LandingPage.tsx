@@ -402,12 +402,12 @@ function Processo() {
             Um <span className="italic font-light" style={{ color: brown }}>processo enxuto</span>, do conceito à entrega.
           </h2>
         </div>
-        <div className="mt-14 relative">
+        <div className="mt-14 relative md:max-w-4xl md:mx-auto">
           <div
             className="absolute top-6 left-0 right-0 h-px hidden md:block"
             style={{ background: `${caramel}88` }}
           />
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16">
             {steps.map((s, i) => (
               <div key={s.label} className="relative flex flex-col items-center text-center">
                 <div
