@@ -175,19 +175,19 @@ function Portfolio() {
       title: "Botões",
       desc: "Botões metálicos em acabamento preciso para moda e calçados. Redondos, quadrados, decorativos e funcionais. Disponíveis em dourado, prateado, ouro velho e grafite.",
       photo: "Flat lay de botões metálicos variados",
-      image: "/botoes-eliza.jpg",
+      image: "/botoes-new.jpg",
     },
     {
       title: "Fivelas",
       desc: "Fivelas para bolsas, calçados, cintos e vestuário. Produção com cuidado no desenvolvimento e acabamento impecável. Clássicas, geométricas e decorativas.",
       photo: "Flat lay de fivelas com bolsa de couro",
-      image: "/fivela.png",
+      image: "/fivela-new.jpg",
     },
     {
       title: "Passantes, Ponteiras e Laterais",
       desc: "Passantes e laterais para lingerie, beachwear e moda. Ponteiras para cordões e amarrações. Variedade de formatos em dourado, prateado e rosé.",
       photo: "Flat lay de passantes com biquíni aplicado",
-      image: "/ponteira.png",
+      image: "/ponteira-new.jpg",
     },
     {
       title: "Pingentes",
