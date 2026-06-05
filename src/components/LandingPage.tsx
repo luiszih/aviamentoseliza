@@ -313,20 +313,63 @@ function Galeria() {
 /* ---------- Diferenciais (3) ---------- */
 
 function Diferenciais() {
-  const items: { icon: typeof ShieldCheck; title: string; desc: string; image?: string; imageAlt?: string }[] = [
+  const FamaIcon = ({ className }: { className?: string }) => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      {/* F */}
+      <path d="M3 4 V20" />
+      <path d="M3 4 H8" />
+      <path d="M3 12 H7" />
+      {/* A */}
+      <path d="M9.5 20 L11.25 4 L13 20" />
+      <path d="M10 15 H12.5" />
+      {/* M */}
+      <path d="M14.5 20 V4 L16.25 12 L18 4 V20" />
+      {/* A */}
+      <path d="M19.5 20 L20.75 4 L22 20" />
+      <path d="M19.9 15 H21.6" />
+    </svg>
+  );
+
+  const AbvtexIcon = ({ className }: { className?: string }) => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      {/* needle */}
+      <line x1="4" y1="20" x2="19" y2="5" />
+      {/* needle eye */}
+      <circle cx="18.2" cy="5.8" r="1.1" />
+      {/* needle tip */}
+      <path d="M3.4 20.6 L5 19" />
+      {/* thread curving through */}
+      <path d="M7 17 C 10 13, 14 13, 17 9" />
+      <path d="M9 19 C 12 16, 15 15, 18 12" />
+    </svg>
+  );
+
+  const items: { icon: React.ComponentType<{ className?: string }>; title: string; desc: string }[] = [
     {
-      icon: Factory,
+      icon: FamaIcon,
       title: "Certificado FAMA Walt Disney",
       desc: "Garanta conformidade social e ética em sua cadeia de suprimentos com a certificação oficial para parceiros Disney.",
-      image: "/logo-fama.jpg",
-      imageAlt: "Certificação FAMA Walt Disney",
     },
     {
-      icon: Factory,
+      icon: AbvtexIcon,
       title: "Selo ABVTEX Ouro",
       desc: "Comprove o compromisso com a sustentabilidade e práticas trabalhistas justas com o mais alto nível de certificação ABVTEX.",
-      image: "/logo-abvtex.jpg",
-      imageAlt: "Certificação ABVTEX Ouro",
     },
     {
       icon: Factory,
@@ -361,14 +404,6 @@ function Diferenciais() {
               >
                 <it.icon className="h-7 w-7" />
               </div>
-              {it.image && (
-                <img
-                  src={it.image}
-                  alt={it.imageAlt}
-                  className="mt-4"
-                  style={{ height: "36px", width: "auto", objectFit: "contain" }}
-                />
-              )}
               <h3 className="mt-5 font-bold text-xl text-neutral-800">{it.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-neutral-600">{it.desc}</p>
             </div>
