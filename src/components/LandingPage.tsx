@@ -622,9 +622,10 @@ function Faq() {
 /* ---------- Depoimentos ---------- */
 
 function Depoimentos() {
+  const feedback1 = new URL("../assets/feedback-1.png.asset.json", import.meta.url);
   return (
     <section className="py-20 md:py-28" style={{ background: offWhite }}>
-      <div className="mx-auto max-w-4xl px-4 text-center">
+      <div className="mx-auto max-w-6xl px-4 text-center">
         <div className="text-xs tracking-[0.3em] uppercase mb-3" style={{ color: brown }}>
           Prova social
         </div>
@@ -634,23 +635,21 @@ function Depoimentos() {
             constrói no detalhe
           </span>.
         </h2>
-        <div
-          className="mt-12 rounded-3xl p-10 bg-white"
-          style={{ border: `1px solid ${caramel}55` }}
-        >
-          <div className="flex gap-1 mb-4 justify-center">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="h-5 w-5 fill-current" style={{ color: caramel }} />
-            ))}
-          </div>
-          <p className="text-lg italic font-light leading-relaxed text-neutral-700">
-            "Trabalhar com uma fábrica que tem 30 anos de experiência faz toda a diferença.
-            O cuidado no desenvolvimento e a consistência nas entregas se traduzem em coleções
-            mais valorizadas pelo nosso público."
-          </p>
-          <div className="mt-6 text-sm text-neutral-500">
-            {"\n"}
-          </div>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 justify-items-center">
+          <img
+            src={feedback1Asset.url}
+            alt="Depoimento de cliente Eliza - ficaram lindos os produtos"
+            loading="lazy"
+            decoding="async"
+            className="w-full max-w-md h-auto object-contain rounded-3xl shadow-lg"
+          />
+          <img
+            src={feedback2Asset.url}
+            alt="Depoimento de cliente Eliza - gostamos da qualidade e da entrega"
+            loading="lazy"
+            decoding="async"
+            className="w-full max-w-md h-auto object-contain rounded-3xl shadow-lg"
+          />
         </div>
       </div>
     </section>
