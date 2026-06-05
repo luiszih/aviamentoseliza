@@ -624,7 +624,6 @@ function Faq() {
 /* ---------- Depoimentos ---------- */
 
 function Depoimentos() {
-  const feedback1 = new URL("../assets/feedback-1.png.asset.json", import.meta.url);
   return (
     <section className="py-20 md:py-28" style={{ background: offWhite }}>
       <div className="mx-auto max-w-6xl px-4 text-center">
