@@ -7,6 +7,8 @@ import {
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import feedback1Asset from "@/assets/feedback-1.png.asset.json";
+import feedback2Asset from "@/assets/feedback-2.png.asset.json";
 
 const WHATSAPP_NUMBER = "5519995411832";
 const WHATSAPP_MSG = "Olá! Tenho interesse em aviamentos personalizados para minha coleção. Gostaria de mais informações.";
