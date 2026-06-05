@@ -314,57 +314,11 @@ function Galeria() {
 
 function Diferenciais() {
   const FamaIcon = ({ className }: { className?: string }) => (
-    <svg
-      viewBox="0 0 48 48"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2.5}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-label="Certificado FAMA"
-      role="img"
-    >
-      {/* Shield outline */}
-      <path d="M24 6 L40 11 V24 C40 33 32 40 24 42 C16 40 8 33 8 24 V11 Z" />
-      {/* FAMA wordmark */}
-      <text
-        x="24"
-        y="27"
-        textAnchor="middle"
-        fontSize="9"
-        fontWeight="700"
-        fontFamily="ui-sans-serif, system-ui, sans-serif"
-        fill="currentColor"
-        stroke="none"
-        letterSpacing="0.5"
-      >
-        FAMA
-      </text>
-    </svg>
+    <img src="/cert-fama.svg" alt="Certificado FAMA" className={className} />
   );
 
   const AbvtexIcon = ({ className }: { className?: string }) => (
-    <svg
-      viewBox="0 0 48 48"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-label="Selo ABVTEX"
-      role="img"
-    >
-      {/* Needle */}
-      <line x1="10" y1="38" x2="34" y2="14" />
-      {/* Needle eye */}
-      <circle cx="34" cy="14" r="2.5" />
-      {/* Thread curve */}
-      <path d="M34 14 C 30 22, 38 28, 32 36" />
-      {/* Base underline */}
-      <line x1="8" y1="42" x2="40" y2="42" />
-    </svg>
+    <img src="/cert-abvtex.svg" alt="Selo ABVTEX" className={className} />
   );
 
   const items: { icon: React.ComponentType<{ className?: string }>; title: string; desc: string }[] = [
