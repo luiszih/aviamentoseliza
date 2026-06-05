@@ -1,4 +1,11 @@
 import { useEffect, useState } from "react";
+import * as React from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 import {
   Award, ShieldCheck, Factory, Sparkles, ArrowRight, Check, MessageCircle,
   Mail, Instagram, MapPin, ChevronDown, Palette, FileText, CheckCircle2,
