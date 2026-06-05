@@ -193,7 +193,7 @@ function Portfolio() {
       title: "Pingentes",
       desc: "Pingentes decorativos e personalizados para moda, calçados e acessórios. Temáticos, com logos de marca ou exclusivos sob encomenda.",
       photo: "Flat lay de pingentes variados",
-      image: "/pingente.png",
+      image: "/pingente-1.png",
     },
     {
       title: "Reguladores",
@@ -259,7 +259,7 @@ function Galeria() {
     { label: "Botões", src: "/botoes.jpg", alt: "Botões metálicos Eliza Acessórios" },
     { label: "Fivelas", src: "/fivelas.jpg", alt: "Fivelas metálicas Eliza Acessórios" },
     { label: "Passantes, ponteiras e laterais", src: "/passantes-ponteiras.jpg", alt: "Passantes ponteiras e laterais Eliza Acessórios" },
-    { label: "Pingentes — série 1", src: "/pingentes-galeria.png", alt: "Pingentes Eliza Acessórios" },
+    { label: "Pingentes — série 1", src: "/pingente-2.png", alt: "Pingentes Eliza Acessórios" },
     { label: "Pingentes — série 2 (licenciados)", src: "/pingentes-licenciados.jpg", alt: "Pingentes licenciados Eliza Acessórios" },
     { label: "Reguladores", src: "/reguladores.jpg", alt: "Reguladores metálicos Eliza Acessórios" },
   ];
