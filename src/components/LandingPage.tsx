@@ -387,7 +387,6 @@ function Diferenciais() {
 function Processo() {
   const steps = [
     { icon: FileText, label: "Briefing" },
-    { icon: ClipboardList, label: "Ficha Técnica" },
     { icon: CheckCircle2, label: "Aprovação" },
     { icon: Cog, label: "Produção" },
     { icon: Truck, label: "Entrega" },
